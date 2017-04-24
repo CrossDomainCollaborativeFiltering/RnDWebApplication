@@ -1,0 +1,30 @@
+{% include 'head.html' %}
+<header>
+    <nav>
+    <div class="nav-wrapper purple darken-4">
+      <a href="#" class="brand-logo center">Model Based Recommender</a>
+      <!--<ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>-->
+    </div>
+  </nav>
+</header>
+<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Rating for movie</span>
+              <!--<p> Select the user : </p>-->
+              Below is the predicted rating for the movie. Logistic Regression is a powerful tool for the purposes of machine learning. Although logistic regression is an old tool, it competes with the best when it comes to training a model and predicting movies for that model.<br>
+              For this system. first the user rated movies was considered and the logistic regression model was trained based on the tf vectors of the user rated movies. The labels for obviously the ratings given by the user.
+                <span class="purple-text text-darken-4"><h4>Predicted Rating for the Movie:</h4>
+                 <h4>{{ prediction }}/4</h4>   </span>
+            </div>
+
+            </div>
+          </div>
+        </div>
+</body>
+{% include 'foot.html' %}

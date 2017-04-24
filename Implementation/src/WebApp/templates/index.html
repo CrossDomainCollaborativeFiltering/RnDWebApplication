@@ -1,0 +1,180 @@
+       {% include 'head.html' %}
+      <header>
+          <!--<div class="navbar-fixed">-->
+          <nav class="nav-extended purple darken-4">
+                <div class="nav-wrapper">
+                <a href="https://github.com/CrossDomainCollaborativeFiltering" class="brand-logo center">Cross Domain Collaborative Filtering</a>
+                <!--<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>-->
+                </div>
+                <div class="nav-content">
+                  <script>
+                    function docsClicked()
+                    {
+                      // alert("helloworld")
+                      // var parent=document.getElementById('tabs');
+                      var demoElement=document.getElementById('demo');
+                      var docsElement=document.getElementById('docs');
+                      demoElement.style.display="none";
+                      docsElement.style.display="inline";
+
+                    }
+                    function demoCliked()
+                    { 
+                      var demoElement=document.getElementById('demo');
+                      var docsElement=document.getElementById('docs');
+                      demoElement.style.display="inline";
+                      docsElement.style.display="none";
+                    }
+                  </script>
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a id="listElementDocs" onclick="docsClicked()" class="active" href="#test1">Docs</a></li>
+                    <li class="tab"><a id="listElementDemo" onclick="demoCliked()" href="#test2">Demo</a></li>
+                </ul>
+
+                </div>
+            </nav>
+            
+            
+          <!--</div>-->
+
+      </header>
+      <!--<div class="container">-->
+      <!--</div>-->
+      <div id="docs" style="display: inline;" class="col s12">
+      <div class="row">
+          <div class="col s8 offset-m2">
+              <div class="card">
+            <div class="card-content">
+              <span class="card-title">Overview</span>
+              <p>Recommender Systems can be broadly classified into 3 categories. They are Content-Based Filtering, Collaborative Filtering and Hybrid Filtering. Content-Based Filtering is a technique of filtering where we use the raw data of the items considered for recommendation and recommend that to an end-user. Collaborative Filtering is a technique of filtering where we use the data from ther users who have used the item and rated the item and we recommend based on that. Hybrid as the name suggests is an amalgamation of both content based and Collabortive filtering.</p>
+            </div> 
+            <div class="card-action">
+              <a href="demo">Read More</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s8 offset-m2">
+              <div class="card">
+            <div class="card-content">
+              <span class="card-title">Methodology</span>
+              <p>
+                Three of the biggest problems in collaborative filtering are: scalability, Sparsity and Cold Start. To address all these issues we devised a methodology involving primarily 2 steps: <b>Preprocessing</b> which would be a one-time computation where the data can be stored in the secondary storage for future use and <b>Querying</b> which would compute the recommeded items for each user on the user database. 
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">Read More</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s8 offset-m2">
+              <div class="card">
+            <div class="card-content">
+              <span class="card-title">Preprocessing</span>
+              <p>
+                For the purposes of making the recommender more scalable we have introduced clustering of the datasets. This would mean that during the comparison of movies rated by a specific user we do not have to check the entire dataset. We can only check among the movies in the cluster where the requisite movie belongs to. This would imply we are checking among similar movies...click to see how we achieved this...click to read more.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">Read More</a>
+              <!--<a href="#">This is a link</a>-->
+            </div> 
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s8 offset-m2">
+              <div class="card">
+            <div class="card-content">
+              <span class="card-title">Querying</span>
+              <p>
+                  The final step would be querying of the database for recommendations for a specific user. The top three highest rated movies for the specific user are chosen and the corresponding clusters are scraped for simialr movies...click to read more.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">Read More</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s8 offset-m2">
+              <div class="card">
+            <div class="card-content">
+              <span class="card-title">Tackling the Cold Start Problem</span>
+              <p>
+                  A Machine Learning based approach was chosen for tackling the cold start problem and recommending new movies to the user. The Machine Learning model that was used was <b>Logistic Regression</b>...click to read more...
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#">Read More</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+            </div>
+        </div>
+      </div>
+      </div>
+      <div id="demo" style="display:none;" class="col s12">
+        <!-- Here we will have the code for showing the demo -->
+        <!--Helloworld-->
+        <!-- So for this as we know that we had 2 appraoches, the first one is an evaluation model where we make the clusters an find out for each user how good the recommendations by simply considering the 3 highest rated movies, going to the clusters of those movies and recommending all movies that fall in the same cluster and also rated by the same user.
+        We then avearge these ratings and show it to the user.-->
+        <div class="row">
+        <div class="col s6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title ">Evaluate the Clusters</span>
+              <p>
+                Clustering of both datasets(sources: <b>MovieLens</b> and <b>Kaggle</b>) was done in order to group similar movies together. <br>
+                The datasets consisted of 2 types of data: <br>
+                <b>
+                1. Non-Numeric data<br>
+                2. Numeric Data<br>
+                </b><br>
+                For the Clustering of NonNumeric Data tf-vectorization followed by KMeans clustering was done. For more information follow the documentation.
+                For the clustering of numeruic data simply KMeans of requisite attributes was done.
+                The clustered movies were kept by their movie ids in a separate cluster file.
+                <br>
+                The evaluator is required to select a <b>user</b> from an existing pool of users and a recommendation will be made from among the movies that the user has already watched and rated. Based on those recommendation an avearage rating will be calculated. This will show how good similar the movies in that cluster are. This is only an evaluation criteria. No new movies(movies the user has not watched) are recommended here.<br><br><br>
+              </p>
+            </div>
+            <div class="card-action">
+              <!--<a href="#">Demonstration</a>-->
+              <a class="waves-effect waves-light btn purple darken-4" href="/clusterEvaluation/">Demonstration</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+          </div>
+        </div>
+        <div class="col s6">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Recommend New Movies</span>
+              <p>
+                Here we recommend new movies to a user. The evaluator can select a <b>user</b> from an existing pool of users and recommend new movies for that user, movies which the user has not yet rated. <br>
+                Machine Learning is used for this portion of the recommender system. The Machine Learning model used is <b>Logistic Regression</b>. The movies that a specific user has seen is classified according to the ratings given by that user. The total number of classes is 4, ranging from the most loved movies to the most unliked ones. <br>
+                The features for the training set is the tf-vectors for the movies rated by the user. The labels are simply the ratings divided into 4 classes. <br>
+                For checking the <b>predicted rating </b>for any new movie, that movie is first tf-vectorized and a new rating is given to the movie based on the user. It simply answers the question: <b>How far will this movie be liked by the specific user?</b><br>
+                The system works in the following way:<br>
+                1. First the user is selected by the evaluator.<br>
+                2. The system is trained based on the existing ratings given by the user on his watched movies.<br>
+                3. A new movie is selected and it is given a rating based on the prediction of the Machine Learning model.<br>
+              </p>
+            </div>
+            <div class="card-action">
+              <!--<a href="#">Demonstration</a>-->
+              <a class="waves-effect waves-light btn purple darken-4" href="/machineLearning/">Demonstration</a>
+              <!--<a href="#">This is a link</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+        </div><!-- This will be the demo section, so we can kind of do this in one go itself without using any routes-->
+    </body>
+    <!-- purple darken-4-->
+    {% include 'foot.html' %}
