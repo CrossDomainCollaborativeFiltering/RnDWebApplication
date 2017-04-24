@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath Implementation/src/WebApp app:app --log-file=-
+web: sh start.sh
