@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import csv
 import codecs
@@ -22,7 +25,7 @@ class PrepareData:
 
     def openFile(self, fileName):
     
-        csvFile=open(fileName, newline="")
+        csvFile=codecs.open(fileName, 'r', encoding='utf-8', errors='ignore')
         reader=csv.reader(csvFile)
         return reader
 
