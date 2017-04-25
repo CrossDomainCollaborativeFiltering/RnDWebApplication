@@ -83,7 +83,7 @@ class PrepareData:
                 break
     
     def getTrueMovieIds(self):
-        csvReader=self.openFile("datasets/movies/ResultMovieDataSetClone.csv") # this file stores the true movieIds
+        csvReader=self.openFile("datasets/movies/ResultMovieDataSetClone.csv", encoding="utf-8") # this file stores the true movieIds
         next(csvReader)
         for row in csvReader:
             self.allocatedMovieIDs.append(int(row[1]))
