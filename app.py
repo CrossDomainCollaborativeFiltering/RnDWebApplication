@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 from Querying import PrepareData, Querying, ComputeResults
 from returnAllMovies import MovieDataSet
 from returnAllUsers import UserDataSet
