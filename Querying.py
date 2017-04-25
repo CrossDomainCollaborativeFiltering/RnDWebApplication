@@ -21,7 +21,7 @@ class PrepareData:
 
     def openFile(self, fileName):
     
-        csvFile=open(fileName, newline="")
+        csvFile=open(fileName, newline="", encoding="utf-8")
         reader=csv.reader(csvFile)
         return reader
 
@@ -83,8 +83,9 @@ class PrepareData:
                 break
     
     def getTrueMovieIds(self):
-        csvReader=self.openFile("datasets/movies/ResultMovieDataSetClone.csv", encoding="utf-8") # this file stores the true movieIds
-        next(csvReader)
+        csvReader=self.openFile("datasets/movies/ResultMovieDataSetClone.csv") # this file stores the true movieIds
+        a=next(csvReader)
+        # print ("printing next csv reader, row now:"+str(a))
         for row in csvReader:
             self.allocatedMovieIDs.append(int(row[1]))
             self.trueMovieIds.append(int(row[0])-1) # this -1 is essential
