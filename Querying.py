@@ -1,5 +1,6 @@
 import numpy as np
 import csv
+import codecs
 
 # This is the querying part of the system after pre-processing
 NUM_RATINGS_TO_QUERY=3
