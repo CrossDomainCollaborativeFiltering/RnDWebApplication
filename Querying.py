@@ -21,7 +21,7 @@ class PrepareData:
 
     def openFile(self, fileName):
     
-        csvFile=open(fileName, newline="", encoding="utf-8")
+        csvFile=open(fileName, newline="")
         reader=csv.reader(csvFile)
         return reader
 
