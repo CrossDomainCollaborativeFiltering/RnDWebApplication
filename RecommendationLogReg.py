@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 """
 The following program will be used to recommend based on a Machine Learning approach. The user enters a userid,
 The userid is checked from the user-movies file and the corresponding movies are taken and the data is split into two sets:
@@ -11,6 +14,7 @@ For evaluation of the recommender system a simple appraoch would be to simply us
 2. Recommending movies not watched by the current user
 For movies not watched by the current user we can use the entire data of the user for purposes of training and then on separate movies not watched by the user we can say whether the user would like it or not.
 """
+import codecs
 import csv
 import math
 from scipy import sparse
@@ -28,7 +32,8 @@ VALID_LIST_INDICES=[24,27,35]
 movieCollection=[]
 
 def openFile(fileName):
-    csvFile=open(fileName, newline="")
+    # csvFile=open(fileName, newline="")
+    csvFile=codecs.open(fileName, 'r', encoding='utf-8', errors='ignore')
     reader=csv.reader(csvFile)
     return reader
 
