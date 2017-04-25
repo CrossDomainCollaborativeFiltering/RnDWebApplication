@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# this app must be pinged appropriately for not sleeping on heroku
+
 from Querying import PrepareData, Querying, ComputeResults
 from returnAllMovies import MovieDataSet
 from returnAllUsers import UserDataSet
