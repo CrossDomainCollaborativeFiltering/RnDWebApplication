@@ -1,19 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""
-The following program will be used to recommend based on a Machine Learning approach. The user enters a userid,
-The userid is checked from the user-movies file and the corresponding movies are taken and the data is split into two sets:
-1. The training data
-2. The test data
-Movies rated from 2.5 and below are taken as 'not liked' and movies rated >2.5 are rated as 'liked'. For logistic regression the features in this case would simply be the tf(term frequency) values. So for every training of the data a tfidf score would be calculated and accordingly will be used for recommendation. It is also more effective to keep the trained model for a particular user for future calculations.
-Accordingly a 2 class classifier is built.
-Purpose:
-1. Evaluation
-For evaluation of the recommender system a simple appraoch would be to simply use 2/3 of the data for training and 1/3rd of the data for testing purpose.
-2. Recommending movies not watched by the current user
-For movies not watched by the current user we can use the entire data of the user for purposes of training and then on separate movies not watched by the user we can say whether the user would like it or not.
-"""
 import codecs
 import csv
 import math
