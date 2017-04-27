@@ -68,10 +68,12 @@ def showRecommendation(userid):
 def predictMovieRating(movieid):
     movieid=int(movieid)
     prediction=obj1.predict(movieid)
-    if prediction==-1:
+    # print ("prediction: "+str(prediction))
+    if prediction!=-1:
+        prediction=int(prediction[0])
+        return render_template('showPrediction.html', prediction=prediction)
+    else:
         return render_template('/errorPage.html')
-    prediction=int(prediction[0])
-    return render_template('showPrediction.html', prediction=prediction)
 
 # TODO for this app:
 # Add loading icon when all movies are loaded onto screen for the route '/machineLearning/trainLogRegModel/<userid>'. 

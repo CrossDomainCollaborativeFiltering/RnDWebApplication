@@ -416,7 +416,7 @@ class PredictMovies:
             termDocMatrix=sampleTfVectorizer.vectorize()
             prediction=self.recommend.predict(termDocMatrix)
             return prediction
-        except Exception:
+        except Exception as e:
             return -1
 
 # def main():
@@ -425,11 +425,19 @@ class PredictMovies:
 #     print ("data prepared")
 #     obj.trainModel(78)
 #     print ("model trained")
-#     while True:
-#         print("enter a movieid")
-#         movieid=int (input())
+#     movieid=0
+#     error=0
+#     while movieid<=10196:
+#         # print("enter a movieid")
+#         # movieid=int (input())
+#         print("checking for movieid:"+str(movieid))
 #         a=obj.predict(movieid)
-#         print ("prediction : "+str(a))
+#         movieid+=1
+#         if a==-1:
+#             error+=1
+#             print("error for:"+str(a))
+        
+#     print ("error : "+str(error))
 
 
 # if __name__=="__main__":
