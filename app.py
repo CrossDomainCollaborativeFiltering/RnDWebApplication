@@ -66,6 +66,9 @@ def showRecommendation(userid):
 
 @app.route('/machineLearning/trainLogRegModel/predictRating/<movieid>')
 def predictMovieRating(movieid):
+    if movieid=="10197":
+        print("caught")
+        movieid=0
     movieid=int(movieid)
     prediction=obj1.predict(movieid)
     # print ("prediction: "+str(prediction))
